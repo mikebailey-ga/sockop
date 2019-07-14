@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
-class Test extends Component {
+class DropoffPage extends Component {
+
+
+
   render() {
     return (
       <div>
-        asdfasdf
+        <h1>Dropoffs</h1>
+        
       </div>
     );
   }
 }
 
-export default Test;
+export default DropoffPage;
