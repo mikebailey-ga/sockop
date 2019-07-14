@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Hotspot from '../../components/Hotspot';
 
-class DropoffPage extends Component {
-
-
-  render() {
-    return (
-      <div>
-        <h1>Dropoffs</h1>
-        <div>
-        </div>
-      </div>
-    );
-  }
-}
+const DropoffPage = (props) => (
+  <div className='hotspot-list'>
+    {props.hotspots.map((hotspot, idx) =>
+      <Hotspot 
+        hotspot = {hotspot}
+      />
+    )}
+  </div>
+);
 
 export default DropoffPage;
