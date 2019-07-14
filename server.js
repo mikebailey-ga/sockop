@@ -1,9 +1,10 @@
+require('dotenv').config();
+require('./config/database');
+
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
-require('dotenv').config();
-require('./config/database');
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use(express.static(path.join(__dirname,'build')));
 //Routes
 //const apiRouter = require('./routes/api');
 //app.use('/api', apiRouter);
+
+const usersRouter = require('./routes/users');
+app.use('/users', usersRouter);
 
 app.get('/*', function(req,res){
   res.sendFile(path.join(__dirname,'build','index.html'));
