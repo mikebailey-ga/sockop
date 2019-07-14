@@ -1,6 +1,5 @@
 const Hotspot = require('../models/hotspot');
 
-
 async function addHotspot(req,res) {
   let hotspot = new Hotspot(req.body);
   try {
@@ -12,6 +11,14 @@ async function addHotspot(req,res) {
   }
 }
 
+function getHotspots(req,res) {
+  console.log('asdfasdf');
+  Hotspot.find({}, function(err,hotspots){
+    res.status(200).json(hotspots);
+  }); 
+}
+
 module.exports = {
-  addHotspot
+  addHotspot,
+  getHotspots
 };

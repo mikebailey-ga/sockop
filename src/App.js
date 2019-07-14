@@ -11,12 +11,19 @@ import statService from './services/statService';
 import './App.css';
 
 class App extends Component {
+
   constructor(e){
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      hotspots: []
     }
   }
+
+  async componentDidMount(){
+    let hotspots = await fetch('/api/hotspot').then(res=>res.json());
+    this.setState({hotspots});
+  }  
 
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
@@ -53,6 +60,8 @@ class App extends Component {
         }/>
         <Route exact path='/dropoff' render={({ history }) => 
           <DropoffPage
+            hotspots = {this.state.hotspots}
+            dropoffs = {this.dropoffs}
             history={history}
             user={this.state.user}
           />
