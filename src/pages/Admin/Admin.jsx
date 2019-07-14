@@ -6,7 +6,8 @@ class Admin extends Component {
 
   state = {
     location: '',
-    people: ''
+    people: '',
+    district: ''
   };
   updateMessage = (msg) => {
     this.setState({message: msg});
@@ -31,7 +32,7 @@ class Admin extends Component {
   }
 
   isFormInvalid() {
-    return !(this.state.location && this.state.people);
+    return !(this.state.location && this.state.people && this.state.district);
   }
 
   render() {
@@ -49,6 +50,16 @@ class Admin extends Component {
               <input type="text" className="form-control" placeholder="People" value={this.state.people} name="people" onChange={this.handleChange} />
             </div>
           </div>
+          <div className="form-group">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" placeholder="District" value={this.state.district} name="district" onChange={this.handleChange} />
+            </div>
+          </div>    
+          <div className="form-group">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" placeholder="Image Link" value={this.state.image} name="image" onChange={this.handleChange} />
+            </div>
+          </div>                    
           <div className="form-group">
             <div className="col-sm-12 text-center">
               <button className="btn btn-default" disabled={this.isFormInvalid()}>Add Hotspot</button>&nbsp;&nbsp;
