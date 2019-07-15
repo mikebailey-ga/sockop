@@ -13,7 +13,7 @@ async function addHotspot(req,res) {
 }
 
 async function addDrop(req,res) {
-  let drop = new drop(req.body);
+  let drop = new Drop(req.body);
   try {
     await drop.save();
     res.status(200).json(res.ok);

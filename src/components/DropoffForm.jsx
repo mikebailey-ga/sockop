@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import userService from '../services/userService';
 
 class DropoffForm extends Component {
+
   state = {
-    hotspotSelected: '',
+    userId: '',
+    location: '',
     pairs: ''
   };
+
+  constructor(e){
+    super();
+    this.state = {
+      userId: userService.getUser()._id
+    }
+  }
 
   updateMessage = (msg) => {
     this.setState({message: msg});
@@ -14,7 +24,8 @@ class DropoffForm extends Component {
   handleChange = (e) => {
     this.updateMessage('');
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      location: this.props.hotspotSelected
     });
   }
   
@@ -38,7 +49,6 @@ class DropoffForm extends Component {
           <div className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />
-              <input type="hidden" name={this.props.hotspotSelected}/>
             </div>
           </div>  
           <div className="form-group">

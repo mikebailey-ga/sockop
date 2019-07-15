@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const dropSchema = new Schema({
   location: String,
   count: Number,
+  pairs: Number,
   userId: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {
   timestamps: true
