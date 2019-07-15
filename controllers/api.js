@@ -29,15 +29,44 @@ function getHotspots(req,res) {
   }); 
 }
 
+function getHotspotByDistrict(req,res){
+  Hotspot.find({
+    district: req.params.id
+  },
+    function(err,hotspot){
+      res.status(200).json(hotspot);
+    }
+  );  
+}
+
 function getDrops(req,res) {
   Drop.find({}, function(err,drop){
     res.status(200).json(drop);
   }); 
 }
 
+function getRecentDrops(req,res){
+  Drop.find({}, function(err,drop){
+    res.status(200).json(drop);
+  }); 
+}
+
+function getUserDrops(req,res){
+  Drop.find({
+    userId: req.params.id
+  },
+    function(err,drop){
+      res.status(200).json(drop);
+    }
+  );
+}
+
 module.exports = {
   addHotspot,
   getHotspots,
+  getHotspotByDistrict,
   addDrop,
-  getDrops
+  getDrops,
+  getUserDrops,
+  getRecentDrops
 };

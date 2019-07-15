@@ -25,7 +25,8 @@ class DropoffForm extends Component {
     this.updateMessage('');
     this.setState({
       [e.target.name]: e.target.value,
-      location: this.props.hotspotSelected
+      location: this.props.hotspotSelected,
+      district: this.props.districtSelected
     });
   }
   

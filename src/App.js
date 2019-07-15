@@ -9,7 +9,7 @@ import Navbar from './components/Navbar'
 import Admin from './pages/Admin/Admin';
 import userService from './services/userService';
 import tokenService from './services/tokenService';
-import statService from './services/statService';
+import {calcNeed} from './services/statService';
 import './App.css';
 
 class App extends Component {
@@ -19,15 +19,17 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       hotspots: [],
+      socks: {},
+      recentDrops: [],
       hotspotSelected: null,
-      districtSelected: null,
-      dropState: 'map'
-    }
+      districtSelected: null    }
   }
 
   async componentDidMount(){
-    let hotspots = await fetch('/api/hotspot').then(res=>res.json());
-    this.setState({hotspots});
+    let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+    socks = calcNeed(recentDrops);
+    this.setState({socks: socks});
+    this.setState({recentDrops: recentDrops});
   }  
 
   handleSignupOrLogin = () => {
@@ -42,6 +44,17 @@ class App extends Component {
   selectHotspot = (e) => {
     this.setState({hotspotSelected: e.target.name});
   }
+  
+  selectDistrict = (value) => {
+    this.setState({districtSelected: value}, () => {
+        this.updateHotspots();
+    });
+  }
+  async updateHotspots(){
+    let hotspots = await fetch(`/api/hotspot/${this.state.districtSelected}`).then(res=>res.json());
+    this.setState({hotspots});  
+  }  
+
 
   render() {
     return (
@@ -77,6 +90,7 @@ class App extends Component {
             districtSelected = {this.state.districtSelected}
             dropState = {this.state.dropState}
             selectHotspot = {this.selectHotspot}
+            selectDistrict = {this.selectDistrict}
             hotspots = {this.state.hotspots}
             dropoffs = {this.dropoffs}
             history={history}
