@@ -16,7 +16,8 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
-      hotspots: []
+      hotspots: [],
+      hotspotSelected: null
     }
   }
 
@@ -33,6 +34,10 @@ class App extends Component {
     userService.logout();
     this.setState({ user: null });
   }  
+
+  selectHotspot = (e) => {
+    this.setState({hotspotSelected: e.target.name});
+  }
 
   render() {
     return (
@@ -60,6 +65,8 @@ class App extends Component {
         }/>
         <Route exact path='/dropoff' render={({ history }) => 
           <DropoffPage
+            hotspotSelected = {this.state.hotspotSelected}
+            selectHotspot = {this.selectHotspot}
             hotspots = {this.state.hotspots}
             dropoffs = {this.dropoffs}
             history={history}
