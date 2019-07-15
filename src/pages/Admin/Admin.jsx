@@ -16,7 +16,6 @@ class Admin extends Component {
   handleChange = (e) => {
     this.updateMessage('');
     this.setState({
-      // Using ES2015 Computed Property Names
       [e.target.name]: e.target.value
     });
   }

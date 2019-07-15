@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import DropoffPage from './pages/DropoffPage/DropoffPage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -42,13 +43,16 @@ class App extends Component {
   render() {
     return (
     <div className="App">
-      <header className="App-header">SockOp</header>
-      <Navbar 
-        user={this.state.user}
-      />
+      <header className="App-header">SockOp
+        <Navbar 
+          user={this.state.user}
+        />
+      </header>
+
       <Switch>
         <Route exact path='/' render={() =>
-          <h1>Home</h1>
+          <Homepage 
+          />
         }/>
 
         <Route exact path='/login' render={({ history }) => 

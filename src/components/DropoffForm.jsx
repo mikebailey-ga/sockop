@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class DropoffForm extends Component {
   state = {
@@ -18,7 +18,7 @@ class DropoffForm extends Component {
     });
   }
   
-  handleAddHotspot = (e) => {
+  handleAddDrop = (e) => {
     e.preventDefault();
     fetch('/api/drop/add', {
       method: 'POST',
@@ -32,22 +32,24 @@ class DropoffForm extends Component {
   }
 
   render(){
-  <div>
-    <form>
-      <div className="form-group">
-        <div className="col-sm-12">
-          <input type="text" className="form-control" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />
-          <input type="hidden" name={this.props.hotspotSelected}/>
-        </div>
-      </div>  
-      <div className="form-group">
-          <div className="col-sm-12 text-center">
-            <button className="btn btn-default">Dropoff</button>&nbsp;&nbsp;
-          <Link to='/dropoff'>Cancel</Link>
-        </div>
-      </div>      
-    </form>  
-  </div>
+    return (    
+      <>
+        <form>
+          <div className="form-group">
+            <div className="col-sm-12">
+              <input type="text" className="form-control" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />
+              <input type="hidden" name={this.props.hotspotSelected}/>
+            </div>
+          </div>  
+          <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <button onClick={this.handleAddDrop} className="btn btn-default">Dropoff</button>&nbsp;&nbsp;
+              <Link to='/dropoff'>Cancel</Link>
+            </div>
+          </div>      
+        </form>  
+      </>
+    );
   }
 }
 

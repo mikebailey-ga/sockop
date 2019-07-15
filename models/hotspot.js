@@ -6,7 +6,8 @@ const hotspotSchema = new Schema({
   people: Number,
   drops: Number,
   image: String,
-  district: Number
+  district: Number,
+  need: Number
 }, {
   timestamps: true
 });
