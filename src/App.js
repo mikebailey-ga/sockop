@@ -45,6 +45,7 @@ class App extends Component {
     <div className="App">
       <header className="App-header">SockOp
         <Navbar 
+          handleLogout = {this.handleLogout}
           user={this.state.user}
         />
       </header>
