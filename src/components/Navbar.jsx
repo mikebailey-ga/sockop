@@ -8,7 +8,7 @@ const Navbar = (props) => {
       <Link to='/dropoff' className='NavBar-link'>Dropoff</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 
-      <Link to='/profile' className='NavBar-link'>Profile</Link>
+      <Link to='/view' className='NavBar-link'>View Drops</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 
       <Link to='/admin' className='NavBar-link'>Admin

@@ -35,7 +35,9 @@ class DropoffForm extends Component {
       method: 'POST',
       headers: new Headers({'Content-Type': 'application/json'}),
       body: JSON.stringify(this.state)
-    })
+    });
+    this.props.history.push('/');
+
   }
 
   isFormInvalid() {
@@ -45,7 +47,7 @@ class DropoffForm extends Component {
   render(){
     return (    
       <>
-        <form>
+        <form >
           <div className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />

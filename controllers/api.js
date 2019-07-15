@@ -24,14 +24,20 @@ async function addDrop(req,res) {
 }
 
 function getHotspots(req,res) {
-  console.log('asdfasdf');
   Hotspot.find({}, function(err,hotspots){
     res.status(200).json(hotspots);
+  }); 
+}
+
+function getDrops(req,res) {
+  Drop.find({}, function(err,drop){
+    res.status(200).json(drop);
   }); 
 }
 
 module.exports = {
   addHotspot,
   getHotspots,
-  addDrop
+  addDrop,
+  getDrops
 };

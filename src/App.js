@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import DropoffPage from './pages/DropoffPage/DropoffPage';
+import ViewPage from './pages/ViewPage/ViewPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import Navbar from './components/Navbar'
 import Admin from './pages/Admin/Admin';
@@ -18,7 +19,9 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       hotspots: [],
-      hotspotSelected: null
+      hotspotSelected: null,
+      districtSelected: null,
+      dropState: 'map'
     }
   }
 
@@ -71,6 +74,8 @@ class App extends Component {
         <Route exact path='/dropoff' render={({ history }) => 
           <DropoffPage
             hotspotSelected = {this.state.hotspotSelected}
+            districtSelected = {this.state.districtSelected}
+            dropState = {this.state.dropState}
             selectHotspot = {this.selectHotspot}
             hotspots = {this.state.hotspots}
             dropoffs = {this.dropoffs}
@@ -78,8 +83,10 @@ class App extends Component {
             user={this.state.user}
           />
         }/>
-        <Route exact path='/profile' render={() =>
-          <h1>Profile</h1>
+        <Route exact path='/view' render={() =>
+          <ViewPage 
+            user={this.state.user}
+          />
         }/>
         <Route exact path='/admin' render={() =>
           <Admin 
