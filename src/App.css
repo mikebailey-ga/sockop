@@ -21,3 +21,25 @@
   margin: 0 auto;
   width: 400px;
 }
+
+.cta {
+  margin-top: 20px;
+  width: 40vh;
+  height: 10vh;
+  font-size: 2em;
+  background-color: #4BB543;
+  color: white;
+  border-radius: 10px;
+}
+
+.homepage-intro{
+  line-height: 48px;
+}
+
+.homepage-intro p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.homepage-intro h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
