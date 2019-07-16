@@ -3,6 +3,7 @@ import ImageMapper from 'react-image-mapper';
 
 
 class Map extends Component {
+
   map = {
     name: 'map',
     areas: [
@@ -22,7 +23,7 @@ class Map extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='map-container'>
         <ImageMapper 
           map = {this.map}
           onClick={area => this.props.selectDistrict(area.alt)}

@@ -9,27 +9,37 @@ import Navbar from './components/Navbar'
 import Admin from './pages/Admin/Admin';
 import userService from './services/userService';
 import tokenService from './services/tokenService';
-import {calcNeed} from './services/statService';
+import calcNeed from './services/statService';
 import './App.css';
 
 class App extends Component {
+  
+  colorArray = [
+    'rgba(0, 255, 0, 0.3)',
+    'rgba(60, 174, 0, 0.3)',
+    'rgba(99, 130, 0, 0.3)',
+    'rgba(125, 97, 0, 0.3)',
+    'rgba(171, 66, 0, 0.3)',
+    'rgba(255, 0, 0, 0.3)'
+    ];
 
   constructor(e){
     super();
     this.state = {
       user: userService.getUser(),
       hotspots: [],
-      socks: {},
+      need: [],
       recentDrops: [],
       hotspotSelected: null,
-      districtSelected: null    }
+      districtSelected: null    
+    }
   }
 
   async componentDidMount(){
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
-    socks = calcNeed(recentDrops);
-    this.setState({socks: socks});
-    this.setState({recentDrops: recentDrops});
+    let need = calcNeed(recentDrops);      
+    this.setState({need});
+    this.setState({recentDrops});
   }  
 
   handleSignupOrLogin = () => {
@@ -59,7 +69,8 @@ class App extends Component {
   render() {
     return (
     <div className="App">
-      <header className="App-header">SockOp
+      <header className="App-header">
+        <Link to='/'>Sock Op</Link>
         <Navbar 
           handleLogout = {this.handleLogout}
           user={this.state.user}
@@ -94,7 +105,9 @@ class App extends Component {
             hotspots = {this.state.hotspots}
             dropoffs = {this.dropoffs}
             history={history}
+            need={this.state.need}
             user={this.state.user}
+            colorArray={this.colorArray}
           />
         }/>
         <Route exact path='/view' render={() =>

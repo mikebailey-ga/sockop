@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../services/userService';
@@ -38,7 +39,6 @@ class DropoffForm extends Component {
       body: JSON.stringify(this.state)
     });
     this.props.history.push('/');
-
   }
 
   isFormInvalid() {
