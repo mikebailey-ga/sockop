@@ -55,8 +55,7 @@
 }
 
 .drop-view-card {
-  width: 18rem;
-}
+display: inline;}
 
 .view-selected {
   background-color: #4BB543;
@@ -64,4 +63,8 @@
 
 .view-button {
   width: 20vh;
+}
+
+.card {
+  width: 18rem;
 }

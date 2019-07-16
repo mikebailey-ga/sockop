@@ -46,7 +46,7 @@ class ViewPage extends Component {
             className={this.state.all ? 'btn view-button': 'btn view-selected view-button'}>Your Drops</button>          
         </div>
         {this.state.all ? 
-           <div className = 'cardholder card-deck container'>
+           <div className = 'container .card-columns'>
             {this.state.allDrops.map((drop) =>
               <Drop
                 drop = {drop}
@@ -54,7 +54,7 @@ class ViewPage extends Component {
             )}
           </div>
         :
-          <div className = 'cardholder card-deck container'>
+          <div className = 'container .card-columns'>
             {this.state.userDrops.map((drop) =>
               <Drop
                 drop = {drop}

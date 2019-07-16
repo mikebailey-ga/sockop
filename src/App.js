@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ImageMapper from 'react-image-mapper';
 import { Switch, Route, Link } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
@@ -29,27 +30,42 @@ class App extends Component {
       user: userService.getUser(),
       hotspots: [],
       need: [],
+      updated: false,
       recentDrops: [],
       hotspotSelected: null,
       districtSelected: null    
     }
-    this.getInitialNeed();
   }
 
-  async getInitialNeed(){
-    let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
-    let need = calcNeed(recentDrops); 
-    this.setState({need}); 
-  }
+  // async getInitialNeed(){
+  //   let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+  //   let need = calcNeed(recentDrops); 
+  //   this.setState({need}); 
+  // }
 
-  /*
   async componentDidMount(){
-    
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
     let need = calcNeed(recentDrops);      
-    this.setState({need});
-    
+    this.setState({need});    
   }  
+
+  async componentDidUpdate(){
+    if(!this.state.updated){
+      let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+      let need = calcNeed(recentDrops);      
+      this.setState({need});
+    }
+  }  
+
+
+  /*
+  async componentDidUpdate(prevProp){
+    if(prevProp !== this.props){
+      let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+      let need = calcNeed(recentDrops);      
+      this.setState({need});      
+    }
+  }
 */
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
@@ -60,8 +76,10 @@ class App extends Component {
     this.setState({ user: null });
   }  
 
-  deselectDistrict = () => {
-    this.setState({districtSelected: null});
+  deselectDistrict = async () => {
+    let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+    let need = calcNeed(recentDrops);
+    this.setState({districtSelected: null, hotspotSelected: null, need: need, updated: true});
   }
 
   selectHotspot = (e) => {
@@ -77,7 +95,6 @@ class App extends Component {
     let hotspots = await fetch(`/api/hotspot/${this.state.districtSelected}`).then(res=>res.json());
     this.setState({hotspots});  
   }  
-
 
   render() {
     return (

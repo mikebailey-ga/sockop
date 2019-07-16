@@ -8,7 +8,7 @@ class Homepage extends Component {
       <>
         <div className='fuzz-blue'/>
         <div className='homepage-intro'>
-          <h2>Socks are among the most requested items by homeless people</h2>
+          <h2>Socks are among the most requested items by the homeless</h2>
           <div className='fuzz-red'/>
           <h2>Make a pledge to drop off a package of socks</h2>
           <div className='fuzz-blue'/>          
