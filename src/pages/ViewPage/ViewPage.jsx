@@ -36,12 +36,17 @@ class ViewPage extends Component {
   render() {
     return (
       <>
+        <h2>Previous Sock Drops</h2>
         <div>
-          <button name='all' onClick={this.handleView} className='btn btn-default'>All Drops</button>
-          <button name='user' onClick={this.handleView} className='btn btn-default'>Your Drops</button>          
+          <button name='all' 
+            onClick={this.handleView} 
+            className={this.state.all ? 'btn view-selected view-button': 'btn view-button'}>All Drops</button>
+          <button name='user' 
+            onClick={this.handleView} 
+            className={this.state.all ? 'btn view-button': 'btn view-selected view-button'}>Your Drops</button>          
         </div>
         {this.state.all ? 
-           <div className = 'drop-list'>
+           <div className = 'cardholder card-deck container'>
             {this.state.allDrops.map((drop) =>
               <Drop
                 drop = {drop}
@@ -49,7 +54,7 @@ class ViewPage extends Component {
             )}
           </div>
         :
-          <div className = 'drop-list'>
+          <div className = 'cardholder card-deck container'>
             {this.state.userDrops.map((drop) =>
               <Drop
                 drop = {drop}

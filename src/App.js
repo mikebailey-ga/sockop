@@ -33,14 +33,16 @@ class App extends Component {
       hotspotSelected: null,
       districtSelected: null    
     }
+    this.getInitialNeed();
   }
-/*
-  async getRecent(){
+
+  async getInitialNeed(){
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
-    let need = calcNeed(recentDrops);    
-    return {need};
+    let need = calcNeed(recentDrops); 
+    this.setState({need}); 
   }
-*/
+
+  /*
   async componentDidMount(){
     
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
@@ -48,7 +50,7 @@ class App extends Component {
     this.setState({need});
     
   }  
-
+*/
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
@@ -57,6 +59,10 @@ class App extends Component {
     userService.logout();
     this.setState({ user: null });
   }  
+
+  deselectDistrict = () => {
+    this.setState({districtSelected: null});
+  }
 
   selectHotspot = (e) => {
     this.setState({hotspotSelected: e.target.name});
@@ -115,6 +121,7 @@ class App extends Component {
             need={this.state.need}
             user={this.state.user}
             colorArray={this.colorArray}
+            deselectDistrict={this.deselectDistrict}
           />
         }/>
         <Route exact path='/view' render={() =>

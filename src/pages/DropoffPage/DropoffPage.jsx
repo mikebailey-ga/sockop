@@ -6,7 +6,7 @@ const DropoffPage = (props) => (
   <>
     <div className='dropoff-page-header'>
       <h2>Drop Off Socks</h2>
-      <p>Select a district, then select a drop off spot.</p>
+      <p>Select a district, then select a drop off spot. The districts are color-coded by how many people have dropped off socks recently.</p>
     </div>
     <Map 
       sampleColor = {props.need['10']}
@@ -20,6 +20,7 @@ const DropoffPage = (props) => (
       history = {props.history}
       hotspots = {props.hotspots}
       districtSelected = {props.districtSelected}
+      deselectDistrict={props.deselectDistrict}
       selectHotspot = {props.selectHotspot}
     />
   </>

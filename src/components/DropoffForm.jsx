@@ -38,7 +38,9 @@ class DropoffForm extends Component {
       headers: new Headers({'Content-Type': 'application/json'}),
       body: JSON.stringify(this.state)
     });
-    this.props.history.push('/');
+    this.props.deselectDistrict();
+    this.props.history.push('/dropoff');
+
   }
 
   isFormInvalid() {
@@ -57,7 +59,7 @@ class DropoffForm extends Component {
           <div className="form-group">
               <div className="col-sm-12 text-center">
                 <button onClick={this.handleAddDrop} className="btn btn-default">Dropoff</button>&nbsp;&nbsp;
-              <Link to='/dropoff'>Cancel</Link>
+                <button onClick={this.props.deselectDistrict} className='btn btn-default'>Cancel</button>
             </div>
           </div>      
         </form>  

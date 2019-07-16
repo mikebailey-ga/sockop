@@ -10,10 +10,11 @@ const SelectHotspot = (props) => (
         hotspotSelected = {props.hotspotSelected}
         history = {props.history}
         districtSelected = {props.districtSelected}
+        deselectDistrict={props.deselectDistrict}
       />
     </div>
   :
-    <div className='hotspot-list'>
+    <div className='hotspot-list container'>
       {props.hotspots.map((hotspot) =>
         <Hotspot 
           selectHotspot = {props.selectHotspot}
