@@ -24,20 +24,7 @@ function calcNeed(drops){
   'rgba(255, 0, 0, 0.3)'
   ];
   
-  let need = {
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0,
-    7: 0,
-    8: 0,
-    9: 0,
-    10: 0,
-    11: 0,
-    12: 0,    
-  };
+  let need = [];
   let socks = {
     1: 0,
     2: 0,
@@ -61,12 +48,12 @@ function calcNeed(drops){
 
   for(let i=0; i<peopleByDistrict.length; i++){
     percentage = socks[i+1] / peopleByDistrict[i];
-    if(percentage >= 0) { need[(i+1).toString()] = colorArray[5] }
-    if(percentage > .1) { need[(i+1).toString()] = colorArray[4] }
-    if(percentage > .2) { need[(i+1).toString()] = colorArray[3] }
-    if(percentage > .3) { need[(i+1).toString()] = colorArray[2] }
-    if(percentage > .4) { need[(i+1).toString()] = colorArray[1] }
-    if(percentage > .5) { need[(i+1).toString()] = colorArray[0] }
+    if(percentage >= 0) { need[i] = colorArray[5] }
+    if(percentage > .1) { need[i] = colorArray[4] }
+    if(percentage > .2) { need[i] = colorArray[3] }
+    if(percentage > .3) { need[i] = colorArray[2] }
+    if(percentage > .4) { need[i] = colorArray[1] }
+    if(percentage > .5) { need[i] = colorArray[0] }
 
   }
   return need;

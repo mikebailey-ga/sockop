@@ -42,9 +42,11 @@ class App extends Component {
   }
 */
   async componentDidMount(){
+    
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
     let need = calcNeed(recentDrops);      
     this.setState({need});
+    
   }  
 
   handleSignupOrLogin = () => {
