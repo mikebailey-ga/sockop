@@ -34,12 +34,17 @@ class App extends Component {
       districtSelected: null    
     }
   }
-
+/*
+  async getRecent(){
+    let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
+    let need = calcNeed(recentDrops);    
+    return {need};
+  }
+*/
   async componentDidMount(){
     let recentDrops = await fetch('/api/drop/recent').then(res=>res.json());
     let need = calcNeed(recentDrops);      
     this.setState({need});
-    this.setState({recentDrops});
   }  
 
   handleSignupOrLogin = () => {
