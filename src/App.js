@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImageMapper from 'react-image-mapper';
+//import ImageMapper from 'react-image-mapper';
 import { Switch, Route, Link } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Navbar from './components/Navbar'
 import Admin from './pages/Admin/Admin';
 import userService from './services/userService';
-import tokenService from './services/tokenService';
+//import tokenService from './services/tokenService';
 import calcNeed from './services/statService';
 import './App.css';
 

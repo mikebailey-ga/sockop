@@ -37,7 +37,7 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        <h1>Add Hotspot</h1>
+        <h2>Add Hotspot</h2>
         <form className="form-horizontal" onSubmit={this.handleAddHotspot} >
           <div className="form-group">
             <div className="col-sm-12">

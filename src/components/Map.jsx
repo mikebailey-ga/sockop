@@ -33,7 +33,7 @@ class Map extends Component {
           map = {this.map}
           need = {this.props.need}
           onClick={area => this.props.selectDistrict(area.alt)}
-          width = {400}
+          width = {450}
           imgWidth = {783}
           src='https://i.imgur.com/yDK9h4z.png'
         />
