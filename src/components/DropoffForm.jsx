@@ -53,7 +53,7 @@ class DropoffForm extends Component {
         <form >
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />
+              <input type="text" className="form-control dropoff-input" placeholder="# of Pairs" name="pairs" onChange={this.handleChange} />
             </div>
           </div>  
           <div className="form-group">

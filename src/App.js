@@ -100,7 +100,14 @@ class App extends Component {
     return (
     <div className="App">
       <header className="App-header">
-        <Link to='/'>Sock Op</Link>
+        <Link to='/' className='logo'>
+          <span className='logo-blue'>S</span>
+          <span className='logo-red'>O</span>
+          <span className='logo-blue'>C</span>
+          <span className='logo-red'>K</span>
+          <span className='logo-blue'>O</span>
+          <span className='logo-red'>P</span>
+          </Link>
         <Navbar 
           handleLogout = {this.handleLogout}
           user={this.state.user}

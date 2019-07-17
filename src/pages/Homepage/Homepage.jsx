@@ -8,9 +8,9 @@ class Homepage extends Component {
       <>
         <div className='fuzz-blue'/>
         <div className='homepage-intro'>
-          <h2>Socks are among the most requested items by the homeless</h2>
+          <h2 className='homepage-text'>Socks are among the most requested items by the homeless</h2>
           <div className='fuzz-red'/>
-          <h2>Make a pledge to drop off a package of socks</h2>
+          <h2 className='homepage-text'>Make a pledge to drop off a package of socks</h2>
           <div className='fuzz-blue'/>          
           <Link to='/dropoff'>  
             <button className="cta btn btn-default">Give Some Socks!</button>

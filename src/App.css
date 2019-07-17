@@ -2,6 +2,32 @@
   text-align: center;  
 }
 
+.logo {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 15vh;
+  letter-spacing: 5vh;
+  -webkit-mask-image: url("https://i.imgur.com/HD5q9vq.png");
+  mask-image: url("https://i.imgur.com/HD5q9vq.png");    
+}
+
+.logo-red{
+  color: red;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: blue; 
+}
+
+.logo-blue{
+  color: blue;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: red;  
+}
+
+.logo-white {
+  color: white;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: red;
+}
 .fuzz-red {
   height: 50px;
   -webkit-mask-image: url("https://i.imgur.com/HD5q9vq.png");
@@ -23,6 +49,10 @@
   font-size: calc(10px + 2vmin);
 }
 
+a {
+  color: blue;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -42,16 +72,30 @@
   border-radius: 10px;
 }
 
+.dropoff-input{
+  width: 180px;
+  margin: 0 auto;
+}
+
 .homepage-intro{
   line-height: 48px;
+}
+
+.center-this {
+  margin: 0 auto;
 }
 
 .homepage-intro p {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.homepage-intro h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.homepage-text, button{
+  font-family: 'Work Sans', sans-serif;
+  margin: 20px 0px 20px 0px;
+}
+
+.NavBar-link, h2{
+  font-family: 'Work Sans', sans-serif;
 }
 
 .drop-view-card {
@@ -67,4 +111,9 @@ display: inline;}
 
 .card {
   width: 18rem;
+}
+
+.NavBar {
+  margin-bottom: 20px;
+  font-size: 5vh;
 }
