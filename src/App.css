@@ -83,10 +83,6 @@ a {
   line-height: 48px;
 }
 
-.center-this {
-  margin: 0 auto;
-}
-
 .homepage-intro p {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -113,6 +109,8 @@ display: inline;}
 
 .card {
   width: 18rem;
+  display: inline-block;
+  margin: 1rem;
 }
 
 .NavBar {
