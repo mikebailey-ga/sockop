@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const hotspotSchema = new Schema({
   location: String,
-  people: Number,
-  drops: Number,
+  drops: [{type: Schema.Types.ObjectId, ref: 'User'}],
   image: String,
   district: Number,
   need: Number

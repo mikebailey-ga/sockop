@@ -6,7 +6,7 @@ class Admin extends Component {
 
   state = {
     location: '',
-    people: '',
+    image: '',
     district: ''
   };
   updateMessage = (msg) => {
@@ -22,6 +22,11 @@ class Admin extends Component {
   
   handleAddHotspot = (e) => {
     e.preventDefault();
+    this.setState({
+      location: '',
+      image: '',
+      district: ''      
+    });
     console.log('Submitted');
     fetch('/api/hotspot/add', {
       method: 'POST',
@@ -31,22 +36,17 @@ class Admin extends Component {
   }
 
   isFormInvalid() {
-    return !(this.state.location && this.state.people && this.state.district);
+    return !(this.state.location && this.state.district);
   }
 
   render() {
     return (
       <div>
         <h2>Add Hotspot</h2>
-        <form className="form-horizontal" onSubmit={this.handleAddHotspot} >
+        <form className="form-horizontal" id="adminform" onSubmit={this.handleAddHotspot} >
           <div className="form-group">
             <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="People" value={this.state.people} name="people" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">

@@ -2,11 +2,10 @@ import React from 'react';
 
 const Hotspot = (props) => (
   <div className='card center-this'>
-    <img className='card-img-top' src='https://via.placeholder.com/150'/>
+    <img className='card-img-top' src={props.hotspot.image}/>
 
     <div className='card-body'>
       <h5 className='card-title'>{props.hotspot.location}</h5>
-      <p className='card-text'>Est. # of pairs needed: {props.hotspot.people}</p>
       <a href="#" name={props.hotspot.location} onClick={props.selectHotspot} className="btn btn-primary">Select</a>
     </div>  
   </div>
