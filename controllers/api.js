@@ -48,6 +48,7 @@ function getDrops(req,res) {
 function getRecentDrops(req,res){
   Drop.find({}, function(err,drop){
     res.status(200).json(drop);
+    //Date query wasn't working, need to insert logic for last two weeks.
   }); 
 }
 

@@ -6,7 +6,8 @@ const dropSchema = new Schema({
   district: String,
   count: Number,
   pairs: Number,
-  userId: {type: Schema.Types.ObjectId, ref: 'User'}
+  userId: {type: Schema.Types.ObjectId, ref: 'User'},
+  hotspot: {type: Schema.Types.ObjectId, ref: 'Hotspot'}
 }, {
   timestamps: true
 });

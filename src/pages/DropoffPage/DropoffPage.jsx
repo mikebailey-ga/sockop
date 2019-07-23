@@ -17,6 +17,7 @@ const DropoffPage = (props) => (
     />
     <SelectHotspot 
       hotspotSelected = {props.hotspotSelected}
+      hotspotId = {props.hotspotId}
       history = {props.history}
       hotspots = {props.hotspots}
       districtSelected = {props.districtSelected}

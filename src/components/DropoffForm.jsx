@@ -8,13 +8,14 @@ class DropoffForm extends Component {
   state = {
     userId: '',
     location: '',
-    pairs: ''
+    pairs: '',
+    hotspot: ''
   };
 
   constructor(e){
     super();
     this.state = {
-      userId: userService.getUser()._id
+      userId: userService.getUser()._id,
     }
   }
 

@@ -33,6 +33,7 @@ class App extends Component {
       updated: false,
       recentDrops: [],
       hotspotSelected: null,
+      hotspotId: null,
       districtSelected: null    
     }
   }
@@ -83,7 +84,9 @@ class App extends Component {
   }
 
   selectHotspot = (e) => {
-    this.setState({hotspotSelected: e.target.name});
+    this.setState({
+      hotspotSelected: e.target.name
+    });
   }
   
   selectDistrict = (value) => {
@@ -135,6 +138,7 @@ class App extends Component {
         <Route exact path='/dropoff' render={({ history }) => 
           <DropoffPage
             hotspotSelected = {this.state.hotspotSelected}
+            hotspotId = {this.state.hotspotId}
             districtSelected = {this.state.districtSelected}
             dropState = {this.state.dropState}
             selectHotspot = {this.selectHotspot}
