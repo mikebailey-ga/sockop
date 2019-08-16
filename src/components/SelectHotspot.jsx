@@ -12,6 +12,7 @@ const SelectHotspot = (props) => (
         history = {props.history}
         districtSelected = {props.districtSelected}
         deselectDistrict={props.deselectDistrict}
+        dropoffComplete={props.dropoffComplete}
       />
     </div>
   :

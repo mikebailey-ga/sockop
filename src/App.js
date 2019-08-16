@@ -34,7 +34,9 @@ class App extends Component {
       recentDrops: [],
       hotspotSelected: null,
       hotspotId: null,
-      districtSelected: null    }
+      districtSelected: null,
+      dropoffSubmitted: false    
+    }
   }
 
   // async getInitialNeed(){
@@ -86,7 +88,13 @@ class App extends Component {
       hotspotSelected: e.target.name
     });
   }
-  
+
+  dropoffComplete = (e) => {
+    this.setState({
+      dropoffSubmitted: true
+    });
+  }  
+
   selectDistrict = (value) => {
     this.setState({districtSelected: value}, () => {
         this.updateHotspots();
@@ -148,6 +156,8 @@ class App extends Component {
             user={this.state.user}
             colorArray={this.colorArray}
             deselectDistrict={this.deselectDistrict}
+            dropoffSubmitted={this.state.dropoffSubmitted}
+            dropoffComplete={this.dropoffComplete}
           />
         }/>
         <Route exact path='/view' render={() =>

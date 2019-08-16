@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import { Alert } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 import userService from '../services/userService';
 import Alertbox from './Alertbox';
@@ -47,7 +46,8 @@ class DropoffForm extends Component {
       dropoffSubmitted: true
     });
     this.props.deselectDistrict();
-    this.props.history.push('/dropoff');
+    this.props.dropoffComplete();
+    //this.props.history.push('/dropoff');
   }
 
   isFormInvalid() {

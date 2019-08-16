@@ -1,4 +1,5 @@
 import React from 'react';
+import Alertbox from '../../components/Alertbox';
 import Map from '../../components/Map';
 import SelectHotspot from '../../components/SelectHotspot';
 
@@ -15,6 +16,7 @@ const DropoffPage = (props) => (
       colorArray = {props.colorArray}
       need = {props.need}
     />
+    <Alertbox isOpen={props.dropoffSubmitted} />
     <SelectHotspot 
       hotspotSelected = {props.hotspotSelected}
       hotspotId = {props.hotspotId}
@@ -23,6 +25,7 @@ const DropoffPage = (props) => (
       districtSelected = {props.districtSelected}
       deselectDistrict={props.deselectDistrict}
       selectHotspot = {props.selectHotspot}
+      dropoffComplete = {props.dropoffComplete}
     />
   </>
 );
