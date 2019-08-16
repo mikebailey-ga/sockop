@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react';
+import { Alert } from 'reactstrap';
 //import { Link } from 'react-router-dom';
 import userService from '../services/userService';
+import Alertbox from './Alertbox';
 
 class DropoffForm extends Component {
 
@@ -9,13 +11,15 @@ class DropoffForm extends Component {
     userId: '',
     location: '',
     pairs: '',
-    hotspot: ''
+    hotspot: '',
+    dropoffSubmitted: false    
   };
 
   constructor(e){
     super();
     this.state = {
       userId: userService.getUser()._id,
+      dropoffSubmitted: false    
     }
   }
 
@@ -39,7 +43,9 @@ class DropoffForm extends Component {
       headers: new Headers({'Content-Type': 'application/json'}),
       body: JSON.stringify(this.state)
     });
-
+    this.setState({
+      dropoffSubmitted: true
+    });
     this.props.deselectDistrict();
     this.props.history.push('/dropoff');
   }
@@ -51,6 +57,7 @@ class DropoffForm extends Component {
   render(){
     return (    
       <>
+      <Alertbox isOpen={this.state.dropoffSubmitted} />
         <form >
           <div className="form-group">
             <div className="col-sm-12">

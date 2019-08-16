@@ -34,8 +34,7 @@ class App extends Component {
       recentDrops: [],
       hotspotSelected: null,
       hotspotId: null,
-      districtSelected: null    
-    }
+      districtSelected: null    }
   }
 
   // async getInitialNeed(){
@@ -57,7 +56,6 @@ class App extends Component {
       this.setState({need});
     }
   }  
-
 
   /*
   async componentDidUpdate(prevProp){
