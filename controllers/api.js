@@ -41,7 +41,7 @@ function getHotspotByDistrict(req,res){
 
 function getDrops(req,res) {
   Drop.find({}, function(err,drop){
-    res.status(200).json(drop);
+    res.status(200).json(drop.reverse());
   }); 
 }
 
@@ -57,7 +57,7 @@ function getUserDrops(req,res){
     userId: req.params.id
   },
     function(err,drop){
-      res.status(200).json(drop);
+      res.status(200).json(drop.reverse());
     }
   );
 }
