@@ -96,10 +96,11 @@ class App extends Component {
   }  
 
   selectDistrict = (value) => {
-    this.setState({districtSelected: value}, () => {
+    this.setState({districtSelected: value, dropoffSubmitted: false}, () => {
         this.updateHotspots();
     });
   }
+  
   async updateHotspots(){
     let hotspots = await fetch(`/api/hotspot/${this.state.districtSelected}`).then(res=>res.json());
     this.setState({hotspots});  

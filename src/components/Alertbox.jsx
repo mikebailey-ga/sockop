@@ -5,7 +5,7 @@ const Alertbox = (props) => {
   return (
     <div>
       <Alert color="success" isOpen={props.isOpen}>
-        This is a success alert — check it out!
+        Thank you for dropping off socks!
       </Alert>
     </div>
   );
