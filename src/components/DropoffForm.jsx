@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 import userService from '../services/userService';
-import Alertbox from './Alertbox';
 
 class DropoffForm extends Component {
 
@@ -11,14 +10,13 @@ class DropoffForm extends Component {
     location: '',
     pairs: '',
     hotspot: '',
-    dropoffSubmitted: false    
+    image: ''
   };
 
   constructor(e){
     super();
     this.state = {
-      userId: userService.getUser()._id,
-      dropoffSubmitted: false    
+      userId: userService.getUser()._id
     }
   }
 
@@ -31,7 +29,8 @@ class DropoffForm extends Component {
     this.setState({
       [e.target.name]: e.target.value,
       location: this.props.hotspotSelected,
-      district: this.props.districtSelected
+      district: this.props.districtSelected,
+      image: this.props.hotspotImage
     });
   }
   
@@ -57,7 +56,6 @@ class DropoffForm extends Component {
   render(){
     return (    
       <>
-      <Alertbox isOpen={this.state.dropoffSubmitted} />
         <form >
           <div className="form-group">
             <div className="col-sm-12">

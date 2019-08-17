@@ -19,6 +19,7 @@ const DropoffPage = (props) => (
     <Alertbox isOpen={props.dropoffSubmitted} />
     <SelectHotspot 
       hotspotSelected = {props.hotspotSelected}
+      hotspotImage = {props.hotspotImage}
       hotspotId = {props.hotspotId}
       history = {props.history}
       hotspots = {props.hotspots}

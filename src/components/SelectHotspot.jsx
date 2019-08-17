@@ -8,6 +8,7 @@ const SelectHotspot = (props) => (
     <div>
       <DropoffForm  
         hotspotSelected = {props.hotspotSelected}
+        hotspotImage = {props.hotspotImage}
         hotspotId = {props.hotspotId}
         history = {props.history}
         districtSelected = {props.districtSelected}

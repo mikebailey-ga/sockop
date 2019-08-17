@@ -33,6 +33,7 @@ class App extends Component {
       updated: false,
       recentDrops: [],
       hotspotSelected: null,
+      hotspotImage: 'https://via.placeholder.com/150',
       hotspotId: null,
       districtSelected: null,
       dropoffSubmitted: false    
@@ -85,7 +86,8 @@ class App extends Component {
 
   selectHotspot = (e) => {
     this.setState({
-      hotspotSelected: e.target.name
+      hotspotSelected: e.target.name,
+      hotspotImage: e.target.getAttribute('data-image')    
     });
   }
 
@@ -145,6 +147,7 @@ class App extends Component {
         <Route exact path='/dropoff' render={({ history }) => 
           <DropoffPage
             hotspotSelected = {this.state.hotspotSelected}
+            hotspotImage = {this.state.hotspotImage}
             hotspotId = {this.state.hotspotId}
             districtSelected = {this.state.districtSelected}
             dropState = {this.state.dropState}

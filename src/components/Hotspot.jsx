@@ -6,7 +6,7 @@ const Hotspot = (props) => (
 
     <div className='card-body'>
       <h5 className='card-title'>{props.hotspot.location}</h5>
-      <a href="#" name={props.hotspot.location} onClick={props.selectHotspot} className="btn btn-primary">Select</a>
+      <a href="#" data-image={props.hotspot.image} name={props.hotspot.location} onClick={props.selectHotspot} className="btn btn-primary">Select</a>
     </div>  
   </div>
 );
