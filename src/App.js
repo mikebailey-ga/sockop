@@ -33,7 +33,6 @@ class App extends Component {
       updated: false,
       recentDrops: [],
       hotspotSelected: null,
-      hotspotImage: 'https://via.placeholder.com/150',
       hotspotId: null,
       districtSelected: null,
       dropoffSubmitted: false    
