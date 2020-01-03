@@ -21,12 +21,12 @@ class ViewPage extends Component {
   }  
 
   handleView = (e) => {
-    if (e.target.name == 'user'){
+    if (e.target.name === 'user'){
       this.setState({
         all: false
       });
     }
-    if (e.target.name == 'all'){
+    if (e.target.name === 'all'){
       this.setState({
         all: true
       });

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hotspot = (props) => (
   <div className='card center-this'>
-    <img className='card-img-top' src={props.hotspot.image}/>
+    <img className='card-img-top' src={props.hotspot.image} alt='Google Map of intersection'/>
 
     <div className='card-body'>
       <h5 className='card-title'>{props.hotspot.location}</h5>
