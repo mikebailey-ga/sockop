@@ -1,3 +1,8 @@
 .NavBar-container {
   font-size: .7em;
 }
+
+.NavBar-welcome {
+  font-size: 80%;
+  color: #222;
+}

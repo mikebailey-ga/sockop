@@ -78,9 +78,17 @@ a {
   border-radius: 10px;
 }
 
+.cta:hover {
+  color: white;
+}
+
 .dropoff-input{
   width: 180px;
   margin: 0 auto;
+}
+
+.dropoff-page-header p {
+  margin: auto 20px;
 }
 
 .homepage-intro{
@@ -105,10 +113,16 @@ display: inline;}
 
 .view-selected {
   background-color: #4BB543;
+  color: white;
+}
+
+.view-selected:hover {
+  color:white;
 }
 
 .view-button {
   width: 20vh;
+ 
 }
 
 .card {
@@ -121,6 +135,8 @@ display: inline;}
   margin-bottom: 20px;
   font-size: 5vh;
 }
+
+
 
 @media only screen 
   and (min-device-width: 320px) 
