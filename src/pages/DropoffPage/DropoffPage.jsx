@@ -17,17 +17,17 @@ const DropoffPage = (props) => (
       need = {props.need}
     />
     <Alertbox isOpen={props.dropoffSubmitted} />
-    <SelectHotspot 
-      hotspotSelected = {props.hotspotSelected}
-      hotspotImage = {props.hotspotImage}
-      hotspotId = {props.hotspotId}
-      history = {props.history}
-      hotspots = {props.hotspots}
-      districtSelected = {props.districtSelected}
-      deselectDistrict={props.deselectDistrict}
-      selectHotspot = {props.selectHotspot}
-      dropoffComplete = {props.dropoffComplete}
-    />
+      <SelectHotspot 
+        hotspotSelected = {props.hotspotSelected}
+        hotspotImage = {props.hotspotImage}
+        hotspotId = {props.hotspotId}
+        history = {props.history}
+        hotspots = {props.hotspots}
+        districtSelected = {props.districtSelected}
+        deselectDistrict={props.deselectDistrict}
+        selectHotspot = {props.selectHotspot}
+        dropoffComplete = {props.dropoffComplete}
+      />
   </>
 );
 export default DropoffPage;
