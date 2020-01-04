@@ -13,31 +13,35 @@
   mask-image: url("https://i.imgur.com/HD5q9vq.png");    
 }
 
+.logo:hover {
+  text-decoration: none;
+}
+
 .logo-red{
   color: red;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: blue; 
 }
 
 .logo-blue{
   color: blue;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: red;  
 }
 
 .logo-white {
   color: white;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: red;
 }
 .fuzz-red {
-  height: 50px;
+  height: 20px;
   -webkit-mask-image: url("https://i.imgur.com/HD5q9vq.png");
   mask-image: url("https://i.imgur.com/HD5q9vq.png");  
   background-color: red;
 }
 .fuzz-blue {
-  height: 50px;
+  height: 20px;
   -webkit-mask-image: url("https://i.imgur.com/HD5q9vq.png");
   mask-image: url("https://i.imgur.com/HD5q9vq.png");  
   background-color: blue;
